@@ -2,6 +2,18 @@
 Nginx, Apache等WEB服务器选型比对
 
 
+###Apache请求模型
+
+![](https://i.imgur.com/FqBlX4A.png)
+
+![](https://i.imgur.com/kbsgswp.png)
+
+
+###Nginx请求模型
+
+![](https://i.imgur.com/wem5gHy.png)
+
+
 <pre>
 Apache与Nginx的优缺点对比：
       1：Nginx相对于Apache的优点：
