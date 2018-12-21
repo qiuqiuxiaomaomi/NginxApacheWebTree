@@ -123,4 +123,30 @@ Nginx优于Apache的主要有两点：
             6)处理静态文件，索引文件以及自动索引，打开文件描述符缓冲。
         缺点：
             7)nginx处理动态请求是鸡肋，不如Apache；
+
+    建议方案：
+        Apache 后台服务器（主要处理php及一些动态请求）；Nginx  前端服务器（高并发请求、
+        静态资源、负载均衡、反向代理和前端Cache等）
+</pre>
+
+Nginx + Apache动静分离
+
+将配置Nginx实现动静分离，对php页面的请求转发给LAMP处理，而静态页面交给Nginx，以实现动静
+分离。客户请求静态数据给Nginx，Nginx直接应答客户端，当请求动态数据到Nginx时，Nginx让客户
+端去找LAMP，通过代理的方式，LAMP就和客户端连接了。
+
+![](https://i.imgur.com/517dAxL.png)
+
+处理php的apache服务器
+![](https://i.imgur.com/L7UFuU6.png)
+
+处理静态图片文件的Nginx服务器
+
+![](https://i.imgur.com/Hrq2WDo.png)
+
+<pre>
+Nginx + Apache实现动静分离
+
+          Nginx的静态处理能力极强，但是动态处理能力不足，因此，在企业中常用动静分离技术，动静
+      分离技术其实是采用代理的方式，在server{}段中加入带正则匹配的额location来指定匹配项。
 </pre>
