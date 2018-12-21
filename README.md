@@ -74,3 +74,18 @@ Nginx优于Apache的主要有两点：
       1：去掉域名中的www标记
       2：去掉www标记，但是保存子域名
 </pre>
+
+![](https://i.imgur.com/IFkwBMz.png)
+
+<pre>
+建议方案：
+
+      Apache 后台服务器（主要处理php及一些功能请求 如：中文url）
+
+      Nginx  前端服务器（利用它占用系统资源少得优势来处理静态页面大量请求）
+
+      Lighttpd 图片服务器(cpu占用率低，效能好，以及丰富的模块等特点。其静态文件的响应
+               能力远高于Apache，可谓Web服务器的后期之秀。)
+
+总体来说，随着nginx功能得完善将使他成为今后web server得主流。
+</pre>
